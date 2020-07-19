@@ -4,9 +4,21 @@
 <view>我的年龄：{{age}}</view>
 
 <!-- 2 列表展示 wx:for-->
-<view wx:for="{{movice}}">{{item.name}}--{{item.age}}</view>
+<!-- <view wx:for="{{movice}}">{{item.name}}--{{item.age}}</view>
 
-<!-- 3 事件监听 -->
+  3 事件监听 
 <view>当前计数：{{counter}}</view>
 <button size="mini" bindtap="handleBtnClick">+</button>
 <button size="mini" bindtap="delBtnClick">-</button>
+
+<br/> -->
+<!-- 获取用户信息 -->
+<button size="mini" 
+        bindgetuserinfo="handleGetUserInfo"
+        open-type="getUserInfo">获取授权</button>
+
+<!-- 在页面展示用户信息 ，不能展示-->
+<open-data type="userNickName"></open-data>
+<open-data type="userAvatarUrl"></open-data>
+
+<view wx:for="{{list}}">{{item.title}}</view>
