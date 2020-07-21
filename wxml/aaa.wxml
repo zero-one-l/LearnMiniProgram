@@ -1,0 +1,3 @@
+<template name="aaa">
+   <view>我是aaa模板的内容</view>
+</template>

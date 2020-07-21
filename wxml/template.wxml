@@ -1,0 +1,6 @@
+<!-- 错误 -->
+<!-- <import src="./aaa.wxml"/> -->
+<template name="contentItem">
+  <button size="mini">{{btntext}}</button>
+  <view>{{content}}</view>
+</template>

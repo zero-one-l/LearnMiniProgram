@@ -1,0 +1,4 @@
+/* page/wxml/wxml.wxss */
+.active{
+  color: red;
+}
