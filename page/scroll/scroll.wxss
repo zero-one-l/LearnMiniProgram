@@ -1,0 +1,27 @@
+/* page/scroll/scroll.wxss */
+
+.container1{
+  background: greenyellow;
+  /* 不换行 */
+  white-space: nowrap;
+}
+
+.item1{
+  width: 100px;
+  height: 100px;
+  background: lightblue;
+  margin: 10px;
+  /*设置为行内块级元素*/
+  display: inline-block;
+}
+
+.container2{
+  background: lightcoral;
+  height: 200px;
+  margin-top: 20px;
+}
+.item2{
+  height: 100px;
+  background: yellowgreen;
+  margin: 10px;
+}

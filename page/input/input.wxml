@@ -1,0 +1,33 @@
+<!--page/input/input.wxml-->
+
+<!-- 1 input的基本使用 -->
+<input/>
+
+<!-- 2 value input中的默认值 -->
+<input value="哈哈哈哈哈"></input>
+
+<view>-----------------------------</view>
+<!-- 3 type 决定键盘的类型-->
+<!-- text 文本输入键盘/ number 数字输入键盘/ idcard 身份证输入键盘/ 
+digit 带小数点的数字键盘-->
+<input type="text"></input>
+<input type="number"></input>
+
+<view>-----------------------------------</view>
+<!-- 4 password 暗文 -->
+<input password></input>
+
+<view>-----------------------------------</view>
+<!-- 5 placeholder 占位符 -->
+<input placeholder="请输入内容"></input>
+
+<!-- 6 confirm-type 改变发送建 -->
+<input confirm-type="send"></input>
+<input confirm-type="search"></input>
+<input confirm-type="done"></input>
+
+<!-- input绑定事件  -->
+<input bindinput="handleInput"
+       bindfocus="handleFocus"
+       bindblur="handleBlur"></input>
+<view>{{message}}</view>
