@@ -1,3 +1,55 @@
 <!--page/home/home.wxml-->
 <text class="title">Hello Word</text>
 <button size="mini">按钮</button>
+
+<!-- 1 使用自定义组件，先在home.json中注册 -->
+<!-- <my-cpn></my-cpn> -->
+
+<!-- 2 自定义组件的样式细节 -->
+<!-- 使用class样式时，组件内的样式和外部样式互不影响 -->
+<!-- 组件内不能使用id选择器、属性选择器、标签选择器 -->
+<!-- <my-style/> -->
+
+<!-- 如何使class相互影响 -->
+<!-- 在my-style.js中
+      options:{
+    styleIsolation: "apply-shared"
+  }
+ -->
+
+ <!-- 3 给自定义组件传递数据/样式-->
+ <my-prop title="哈哈哈哈" titleclass="red"/>
+ <my-prop title="呵呵呵呵" titleclass="green"/>
+ <my-prop />
+
+ <!-- 4 组件内部发出事件 -->
+ <view>当前计数： {{counter}}</view>
+ <my-event bind:increment="handleIncrement"/>
+
+ <!-- 5 tab-control的练习 -->
+ <tab-control titles="{{['流行','新款','精选']}}"
+              bind:itemClick="handleTabControlClick"></tab-control>
+  
+<!-- 6 直接调用组件修改数据/调用方法 -->
+<button size="mini" bind:tap="handleIncrementCpn">修改组件内部的数据</button>
+<my-sel id="sel-id"/>
+<view>---------------------------</view>
+
+<!-- 插槽的使用 -->
+<my-slot>
+  <!-- <button size="mini">我是插入的按钮</button> -->
+  <text>呵呵呵呵呵呵</text>
+</my-slot>
+
+<my-slot>
+<!-- value 默认进度的值 -->
+  <slider value="60"></slider>
+</my-slot>
+
+<!-- 多个插槽的使用 -->
+<!-- 注意事项：1 给每一个插槽起名字
+              2 必须在component中加的options中加multipleSlots属性，为true -->
+<my-mslot>
+  <button size="mini" slot="slot1">我是插入的按钮</button>
+</my-mslot>
+
