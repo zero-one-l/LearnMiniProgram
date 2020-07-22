@@ -1,3 +1,48 @@
 <!--page/home/home.wxml-->
-<text class="title">Hello Word</text>
-<button size="mini">按钮</button>
+<button bindtap="hanldeBtnClick" size="mini">按钮</button>
+<button bind:tap="hanldeBtnClick" size="mini">按钮</button>
+<button catch:tap="hanldeBtnClick" size="mini">按钮</button>
+
+<!-- 常见的事件 -->
+<view class="box"
+      bindtouchstart="handleTouchstart"
+      bindtouchmove="handleTouchmove"
+      bindtouchend="handleTouchend"
+      bindtap="handleTop"
+      bindlongpress="handleLongpress"></view>
+
+
+<!-- 事件对象的分析 -->
+<button size="mini" 
+        bindtap="handleEventClick"
+        bindtouchend="handleEventEnd">事件对象</button>
+
+<view class="outer" bindtap="handleOuter" id="outer">
+  外层的view
+  <view class="inner" id="inner" bindtap="handleInner">内层的view</view>
+</view>
+
+<!-- 事件的传递参数 -->
+<view class="container">
+   <block wx:for="{{titles}}" wx:key="index">
+     <view class="item"
+           bindtap="handleItemClick"
+           data-index="{{index}}"
+           data-item="{{item}}">{{item}}</view>
+   </block>
+</view>
+
+<!-- 事件冒泡和事件捕获 -->
+<!-- bind： 一层一层传递 -->
+<!-- catch: 阻止事件进一步传递 -->
+<view class="view1" 
+      capture-catch:tap="handleCaptureView1" 
+      bindtap="handleBindView1">
+  <view class="view2"
+        capture-bind:tap="handleCaptureView2" 
+        bindtap="handleBindView2">
+    <view class="view3"
+          capture-bind:tap="handleCaptureView3" 
+          bindtap="handleBindView3"></view>
+  </view>
+</view>
